@@ -1,4 +1,4 @@
-# Chat Botの作成方法
+# 対話型AIの作成方法
 - [Dify](https://dify.ai/)でアカウントを作成します。
 - Difyの設定でGeminiをインストールし、API Keyを設定します。
 - DSL.ymlをDLSとしてインポートします。
