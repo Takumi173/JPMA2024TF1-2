@@ -8,7 +8,7 @@
    - https://pmc.ncbi.nlm.nih.gov/articles/PMC10276776/pdf/43441_2023_Article_504.pdf
 
 # サンプルアプリ
-- https://udify.app/chat/8wpsRKU9mspQvuGL
+- リンク：https://udify.app/chat/8wpsRKU9mspQvuGL
 - テスト目的であれば、サンプルアプリは自己責任でご自由にお試しいただいて構いません。
 - すべての実行ログはDifyサーバーに記録され、アップロードファイルもDifyサーバーで管理されます。
 - **誤ったファイルをアップロードしても、ファイルは削除することができません。**
