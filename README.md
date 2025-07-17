@@ -4,7 +4,7 @@
 
 # 実行環境
 
-### 1. Critical to Quality Factorの特定をサポートするチャットボット
+### 1. Critical to Quality Factorの特定をサポートする対話型AI
 - DifyとGeminiを連携させています。
 - 再現するためにはDifyのアカウントとGeminiのAPI Keyが必要です。
       
