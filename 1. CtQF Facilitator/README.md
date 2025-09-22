@@ -1,12 +1,12 @@
 # Developフォルダ
-- 以下の手順で対話型AIの再現できます
-   - [Dify](https://dify.ai/)でアカウントを作成します。
-   - Difyの設定からGeminiを追加し、API Keyを設定します。
-   - このフォルダにある 1. Develop/DSL.ymlをDSLとしてインポートします。
-   - 「知識習得」のブロックで以下の3つをナレッジとして指定します。
-      - https://ctti-clinicaltrials.org/about/ctti-projects/quality-by-design/qbd-quality-by-design-toolkit/exploring-the-critical-to-quality-ctq-factors/
-      - https://ctti-clinicaltrials.org/wp-content/uploads/2021/07/CTTI_QbD_Workshop_Principles_Document-1.pdf
-      - https://pmc.ncbi.nlm.nih.gov/articles/PMC10276776/pdf/43441_2023_Article_504.pdf
+以下の手順で対話型AIの再現できます
+- [Dify](https://dify.ai/)でアカウントを作成します。
+- Difyの設定からGeminiを追加し、API Keyを設定します。
+- このフォルダにある 1. Develop/DSL.ymlをDSLとしてインポートします。
+- 「知識習得」のブロックで以下の3つをナレッジとして指定します。
+   - https://ctti-clinicaltrials.org/about/ctti-projects/quality-by-design/qbd-quality-by-design-toolkit/exploring-the-critical-to-quality-ctq-factors/
+   - https://ctti-clinicaltrials.org/wp-content/uploads/2021/07/CTTI_QbD_Workshop_Principles_Document-1.pdf
+   - https://pmc.ncbi.nlm.nih.gov/articles/PMC10276776/pdf/43441_2023_Article_504.pdf
 
 # History of communication with AIフォルダ
 - タスクフォースで実施した会話のログを、Wordファイルに変換してに格納しています。
