@@ -1,0 +1,458 @@
+app:
+  description: ''
+  icon: 🧑‍🏫
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: CtQF Facilitator
+  use_icon_as_answer_icon: true
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.2.7@b8a04c0155eb3b9d43ed1199b4387e7f67ef75ad63fcec466eab31a726e2c3a0
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 5cefd25f-a7eb-4345-ab80-5c662a3b6c0d
+    name: Protocol
+    selector:
+    - conversation
+    - Protocol
+    value: ''
+    value_type: string
+  - description: ''
+    id: 0bafcdb2-0d6e-4488-a2c6-34d8a3c905cd
+    name: Context
+    selector:
+    - conversation
+    - Context
+    value: []
+    value_type: array[object]
+  - description: ''
+    id: 76340118-ed4d-4ecc-906c-1c1103a8de2c
+    name: Turn
+    selector:
+    - conversation
+    - Turn
+    value: 1
+    value_type: number
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions: []
+      allowed_file_types:
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: false
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 1
+    opening_statement: '私はCritical to Quality Factorの設定をお手伝いするBOTです。
+
+      設定したプロトコルからCritical to Quality Factorの特定を開始しますか？'
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - 指定したプロトコルのCritical to Quality Factorの特定を開始する
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: document-extractor
+      id: 1735037195474-source-1735037436495-target
+      source: '1735037195474'
+      sourceHandle: source
+      target: '1735037436495'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735046267534-false-17350462877950-target
+      source: '1735046267534'
+      sourceHandle: 'false'
+      target: '17350462877950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735046267534-true-llm-target
+      source: '1735046267534'
+      sourceHandle: 'true'
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: knowledge-retrieval
+      id: 1735035642618-source-1735037195474-target
+      selected: false
+      source: '1735035642618'
+      sourceHandle: source
+      target: '1735037195474'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: document-extractor
+        targetType: if-else
+      id: 1735037436495-source-1735046267534-target
+      source: '1735037436495'
+      sourceHandle: source
+      target: '1735046267534'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17350462877950-source-17350462907070-target
+      source: '17350462877950'
+      sourceHandle: source
+      target: '17350462907070'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: プロトコルを指定
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: Protocol
+      height: 90
+      id: '1735035642618'
+      position:
+        x: 30
+        y: 369
+      positionAbsolute:
+        x: 30
+        y: 369
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1735037195474'
+          - result
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            ### プロトコル
+
+            {{#1735037436495.text#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.25
+            top_p: 1
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: c178afed-028d-421e-a0de-238855f9bfc2
+          role: system
+          text: 'あなたはファシリテーターとしてユーザの提供するプロトコルのCritical to Quality Factorを特定していきます。
+
+            Critical to Quality Factorを特定するための情報は、プロトコルとその提供者から引き出す必要があります。
+
+            そのため、まずは提供されたプロトコルを精査し、その中でCritical to Quality Factorを特定するために不足している情報をユーザーに質問してください。
+
+            質問はすべてのCritical to Quality Factorが特定されるまで続けてください。
+
+            なお、ユーザーはこれまでにいくつもの薬剤を世界に送り出している製薬メーカーであり、評価項目の設定に疑義は無く、試験を実施する上での課題となるCritical
+            to Quality Factorを考慮したリスクを特定するようにしてください。
+
+            与えられたプロトコル以外でも起こりうる要因はCritical to Quality Factorとして考慮する必要がありません。
+
+            以下の知識を参考にして、ユーザーをファシリテートしてください。
+
+
+            ### 知識
+
+            {{#context#}}
+
+            '
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: llm
+      position:
+        x: 1457
+        y: 252
+      positionAbsolute:
+        x: 1457
+        y: 252
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#llm.text#}}'
+        desc: ''
+        selected: false
+        title: 回答
+        type: answer
+        variables: []
+      height: 104
+      id: answer
+      position:
+        x: 1791
+        y: 252
+      positionAbsolute:
+        x: 1791
+        y: 252
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids: []
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          reranking_model:
+            model: jina-reranker-v2-base-multilingual
+            provider: langgenius/jina/jina
+          score_threshold: null
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: text-embedding-3-large
+              embedding_provider_name: openai
+              vector_weight: 1
+        query_variable_selector:
+        - '1735035642618'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 知識取得
+        type: knowledge-retrieval
+      height: 54
+      id: '1735037195474'
+      position:
+        x: 364
+        y: 369
+      positionAbsolute:
+        x: 364
+        y: 369
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: テキスト抽出ツール
+        type: document-extractor
+        variable_selector:
+        - '1735035642618'
+        - Protocol
+      height: 92
+      id: '1735037436495'
+      position:
+        x: 698
+        y: 369
+      positionAbsolute:
+        x: 698
+        y: 369
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: <
+            id: d1f78899-9fba-4d8e-a3cb-fc6b8ca44d44
+            value: '1'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: IF/ELSE
+        type: if-else
+      height: 126
+      id: '1735046267534'
+      position:
+        x: 1032
+        y: 369
+      positionAbsolute:
+        x: 1032
+        y: 369
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1735037195474'
+          - result
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+            '
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.25
+            top_p: 1
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: c178afed-028d-421e-a0de-238855f9bfc2
+          role: system
+          text: 'あなたはファシリテーターとしてユーザの提供するプロトコルのCritical to Quality Factorを特定していきます。
+
+            Critical to Quality Factorを特定するための情報は、プロトコルとその提供者から引き出す必要があります。
+
+            そのため、まずは提供されたプロトコルを精査し、その中でCritical to Quality Factorを特定するために不足している情報をユーザーに質問してください。
+
+            質問はすべてのCritical to Quality Factorが特定されるまで続けてください。
+
+            なお、ユーザーはこれまでにいくつもの薬剤を世界に送り出している製薬メーカーであり、評価項目の設定に疑義は無く、試験を実施する上での課題となるCritical
+            to Quality Factorを考慮したリスクを特定するようにしてください。
+
+            与えられたプロトコル以外でも起こりうる要因はCritical to Quality Factorとして考慮する必要がありません。
+
+            以下の知識を参考にして、ユーザーをファシリテートしてください。
+
+
+            ### 知識
+
+            {{#context#}}
+
+
+            ### プロトコル
+
+            {{#1735037436495.text#}}'
+        selected: false
+        title: LLM (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17350462877950'
+      position:
+        x: 1457
+        y: 424.57142857142867
+      positionAbsolute:
+        x: 1457
+        y: 424.57142857142867
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17350462877950.text#}}'
+        desc: ''
+        selected: false
+        title: 回答 (1)
+        type: answer
+        variables: []
+      height: 104
+      id: '17350462907070'
+      position:
+        x: 1791
+        y: 424.57142857142867
+      positionAbsolute:
+        x: 1791
+        y: 424.57142857142867
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -367.0999999999998
+      y: 288.9
+      zoom: 0.7
