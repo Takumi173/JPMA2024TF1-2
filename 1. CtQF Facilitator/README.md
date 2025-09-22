@@ -2,7 +2,7 @@
 以下の手順で対話型AIを再現できます
 - [Dify](https://dify.ai/)でアカウントを作成します。
 - Difyの設定からGeminiを追加し、API Keyを設定します。
-- このフォルダにある 1. Develop/DSL.ymlをDSLとしてインポートします。
+- このフォルダにあるDSL.ymlをDSLとしてインポートします。
 - 「知識習得」のブロックで以下の3つをナレッジとして指定します。
    - https://ctti-clinicaltrials.org/about/ctti-projects/quality-by-design/qbd-quality-by-design-toolkit/exploring-the-critical-to-quality-ctq-factors/
    - https://ctti-clinicaltrials.org/wp-content/uploads/2021/07/CTTI_QbD_Workshop_Principles_Document-1.pdf
