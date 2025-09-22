@@ -1,14 +1,16 @@
 # このリポジトリについて
 
-日本製薬工業協会 データサイエンス部会 2024年度のタスクフォースで作成したプログラムです。詳細は[XXXXXXXXXXXXXXXX](xxxxxxxxxxx)をご参照ください。
+日本製薬工業協会 データサイエンス部会 2024年度のタスクフォースで作成したプログラム、およびその結果を格納したリポジトリです。詳細は[XXXXXXXXXXXXXXXX](xxxxxxxxxxx)をご参照ください。
 
 # 実行環境
 
-### 1. Critical to Quality Factorの特定をサポートする対話型AI
+### 1. CtQF Facilitator
+- Critical to Quality Factorの特定を支援する対話型AIです
 - DifyとGeminiを連携させています。
 - 再現するためにはDifyのアカウントとGeminiのAPI Keyが必要です。
       
-### 2. Geminiによるデータレビュー
+### 2. Smart Clinical Data Validator
+- 臨床試験データをレビューするAIです。
 - [Colaboratory](https://colab.research.google.com/?hl=ja)で実行します。
 - 実行にはGoogleアカウントとGeminiのAPI Keyが必要です。
 
