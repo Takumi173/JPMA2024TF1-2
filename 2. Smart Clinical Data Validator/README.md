@@ -1,5 +1,5 @@
-# 実行方法
-1. Codeに存在するCode.ipynbが本体です。
+# 実行の再現方法
+このフォルダにある1. Codeに存在するCode.ipynbがプログラムです。
 
 <img src ="https://github.com/Takumi173/JPMA2022TF1-1/assets/109738801/522a6fd7-b171-4ad3-8f56-e73a718a6542">のアイコンをクリックすることでColaboratoryで開けます。
 
