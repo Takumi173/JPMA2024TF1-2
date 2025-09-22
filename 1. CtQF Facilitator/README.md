@@ -1,4 +1,4 @@
-# 対話型AIの作成方法
+# 対話型AIの再現方法
 - [Dify](https://dify.ai/)でアカウントを作成します。
 - Difyの設定からGeminiを追加し、API Keyを設定します。
 - 1. Develop/DSL.ymlをDSLとしてインポートします。
