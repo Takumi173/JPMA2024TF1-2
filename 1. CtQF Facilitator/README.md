@@ -1,5 +1,5 @@
 # Developフォルダ
-以下の手順で対話型AIの再現できます
+以下の手順で対話型AIを再現できます
 - [Dify](https://dify.ai/)でアカウントを作成します。
 - Difyの設定からGeminiを追加し、API Keyを設定します。
 - このフォルダにある 1. Develop/DSL.ymlをDSLとしてインポートします。
