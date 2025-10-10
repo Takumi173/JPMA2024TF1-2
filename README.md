@@ -35,7 +35,7 @@
      - https://pmc.ncbi.nlm.nih.gov/articles/PMC10276776/pdf/43441_2023_Article_504.pdf
 
 ### 1.2. History of communication with AI
-- タスクフォースで実施した会話のログを、Wordファイルに格納しています。
+- タスクフォースで実施した会話のログを、Wordファイルで格納しています。
 
 ### Note: タスクフォースで作成したサンプルアプリ
 - こちらのリンクで公開しています：https://udify.app/chat/8wpsRKU9mspQvuGL
