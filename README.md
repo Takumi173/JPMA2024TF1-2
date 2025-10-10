@@ -20,7 +20,7 @@
 
 # 3. 格納されているファイルについて
 ## 1. CtQF Facilitator
-- Critical to Quality Factorの特定を支援する対話型AIを構築するための設定ファイルと、その実行ログを格納しています。
+- Critical to Quality Factorの特定を支援する対話型AIの設定ファイルと、その実行ログを格納しています。
 - DifyとGeminiを連携しているため、再現にはDifyのアカウントとGeminiのAPI Keyが必要です。
 
 ### 1.1. Develop
