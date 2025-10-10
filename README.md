@@ -34,10 +34,10 @@
      - https://ctti-clinicaltrials.org/wp-content/uploads/2021/07/CTTI_QbD_Workshop_Principles_Document-1.pdf
      - https://pmc.ncbi.nlm.nih.gov/articles/PMC10276776/pdf/43441_2023_Article_504.pdf
 
-### 1.2. History of communication with AIフォルダ
+### 1.2. History of communication with AI
 - タスクフォースで実施した会話のログを、Wordファイルに格納しています。
 
-### タスクフォースで作成したサンプルアプリ
+### Note: タスクフォースで作成したサンプルアプリ
 - こちらのリンクで公開しています：https://udify.app/chat/8wpsRKU9mspQvuGL
 - テスト目的であれば、サンプルアプリは自己責任でご自由にお試しいただいて構いません。
 - 出力内容は大規模言語モデルによるものであり、誤った内容が出力される可能性があります。
