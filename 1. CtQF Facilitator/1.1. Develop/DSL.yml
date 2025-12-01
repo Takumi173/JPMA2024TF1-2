@@ -220,7 +220,7 @@ workflow:
             temperature: 0.25
             top_p: 1
           mode: chat
-          name: gemini-2.0-flash
+          name: gemini-2.5-flash
           provider: langgenius/gemini/google
         prompt_template:
         - id: c178afed-028d-421e-a0de-238855f9bfc2
@@ -373,7 +373,7 @@ workflow:
       positionAbsolute:
         x: 1032
         y: 369
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -400,7 +400,7 @@ workflow:
             temperature: 0.25
             top_p: 1
           mode: chat
-          name: gemini-2.0-flash
+          name: gemini-2.5-flash
           provider: langgenius/gemini/google
         prompt_template:
         - id: c178afed-028d-421e-a0de-238855f9bfc2
@@ -443,7 +443,7 @@ workflow:
       positionAbsolute:
         x: 1457
         y: 424.57142857142867
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -469,7 +469,7 @@ workflow:
       type: custom
       width: 242
     viewport:
-      x: 47.100000000000136
-      y: 202.59999999999997
+      x: -668.8999999999999
+      y: 313.40000000000003
       zoom: 0.7
   rag_pipeline_variables: []
