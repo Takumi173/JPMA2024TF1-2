@@ -1,6 +1,6 @@
 app:
   description: ''
-  icon: 🧑‍🏫
+  icon: 🤖
   icon_background: '#FFEAD5'
   mode: advanced-chat
   name: CtQF Facilitator
@@ -9,9 +9,15 @@ dependencies:
 - current_identifier: null
   type: marketplace
   value:
-    marketplace_plugin_unique_identifier: langgenius/gemini:0.2.7@b8a04c0155eb3b9d43ed1199b4387e7f67ef75ad63fcec466eab31a726e2c3a0
+    marketplace_plugin_unique_identifier: langgenius/openai:0.2.7@9031bbf9b37d9f6341a20c78a8bd18d686afd3ff627545496c3557705419d084
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.6.4@17f286b2d6699a258a2eba8bc1bff71b8f795b6aa7bee1464cbfa450b451303a
+    version: null
 kind: app
-version: 0.3.0
+version: 0.5.0
 workflow:
   conversation_variables:
   - description: ''
@@ -37,7 +43,7 @@ workflow:
     - conversation
     - Turn
     value: 1
-    value_type: number
+    value_type: integer
   environment_variables: []
   features:
     file_upload:
@@ -48,6 +54,13 @@ workflow:
       - remote_url
       - local_file
       enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
       image:
         enabled: false
         number_limits: 3
@@ -169,7 +182,7 @@ workflow:
           required: true
           type: file
           variable: Protocol
-      height: 90
+      height: 109
       id: '1735035642618'
       position:
         x: 30
@@ -181,7 +194,7 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         context:
           enabled: true
@@ -239,7 +252,7 @@ workflow:
         variables: []
         vision:
           enabled: false
-      height: 90
+      height: 88
       id: llm
       position:
         x: 1457
@@ -247,11 +260,11 @@ workflow:
       positionAbsolute:
         x: 1457
         y: 252
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         answer: '{{#llm.text#}}'
         desc: ''
@@ -259,7 +272,7 @@ workflow:
         title: 回答
         type: answer
         variables: []
-      height: 104
+      height: 102
       id: answer
       position:
         x: 1791
@@ -271,9 +284,12 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
-        dataset_ids: []
+        dataset_ids:
+        - KcT1/MSLwjOVURiAHS3CVj05Jzqlh5El10f0urrseaXRN5+McqqrAX51sXbcI6lA
+        - 8AleAIhniz3DzVYZnuOrhqcyv/Re4K7mVA8pGLsokyGHLx6ou5nBtw32KQkSuToA
+        - ht0i7kMhTH/N77VSf6HoH0v+1Ia3dDmgcSdTPUpmSqbSmjs96UGj2xo0ZD011cNC
         desc: ''
         multiple_retrieval_config:
           reranking_enable: true
@@ -297,7 +313,7 @@ workflow:
         selected: false
         title: 知識取得
         type: knowledge-retrieval
-      height: 54
+      height: 146
       id: '1735037195474'
       position:
         x: 364
@@ -309,7 +325,7 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         desc: ''
         is_array_file: false
@@ -319,7 +335,7 @@ workflow:
         variable_selector:
         - '1735035642618'
         - Protocol
-      height: 92
+      height: 104
       id: '1735037436495'
       position:
         x: 698
@@ -331,12 +347,12 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         cases:
         - case_id: 'true'
           conditions:
-          - comparison_operator: <
+          - comparison_operator: ≤
             id: d1f78899-9fba-4d8e-a3cb-fc6b8ca44d44
             value: '1'
             varType: number
@@ -349,7 +365,7 @@ workflow:
         selected: false
         title: IF/ELSE
         type: if-else
-      height: 126
+      height: 124
       id: '1735046267534'
       position:
         x: 1032
@@ -357,11 +373,11 @@ workflow:
       positionAbsolute:
         x: 1032
         y: 369
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         context:
           enabled: true
@@ -419,7 +435,7 @@ workflow:
         variables: []
         vision:
           enabled: false
-      height: 90
+      height: 88
       id: '17350462877950'
       position:
         x: 1457
@@ -431,7 +447,7 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     - data:
         answer: '{{#17350462877950.text#}}'
         desc: ''
@@ -439,7 +455,7 @@ workflow:
         title: 回答 (1)
         type: answer
         variables: []
-      height: 104
+      height: 102
       id: '17350462907070'
       position:
         x: 1791
@@ -451,8 +467,9 @@ workflow:
       sourcePosition: right
       targetPosition: left
       type: custom
-      width: 244
+      width: 242
     viewport:
-      x: -367.0999999999998
-      y: 288.9
+      x: 47.100000000000136
+      y: 202.59999999999997
       zoom: 0.7
+  rag_pipeline_variables: []
