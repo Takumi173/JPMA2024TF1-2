@@ -243,9 +243,7 @@ workflow:
 
             ### 知識
 
-            {{#context#}}
-
-            '
+            {{#context#}}'
         selected: false
         title: LLM
         type: llm
@@ -256,10 +254,10 @@ workflow:
       id: llm
       position:
         x: 1457
-        y: 252
+        y: 256.2857142857143
       positionAbsolute:
         x: 1457
-        y: 252
+        y: 256.2857142857143
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -429,7 +427,7 @@ workflow:
             ### プロトコル
 
             {{#1735037436495.text#}}'
-        selected: false
+        selected: true
         title: LLM (1)
         type: llm
         variables: []
@@ -469,7 +467,7 @@ workflow:
       type: custom
       width: 242
     viewport:
-      x: -668.8999999999999
-      y: 313.40000000000003
+      x: -473.89999999999975
+      y: 233.40000000000015
       zoom: 0.7
   rag_pipeline_variables: []
